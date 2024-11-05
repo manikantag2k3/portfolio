@@ -9,7 +9,7 @@ import {
   Cpu,
   ArrowRight,
 } from "lucide-react";
-import { motion } from "framer-motion"; // Import motion from framer-motion
+import { motion } from "framer-motion"; 
 import ProjectCard from "./components/ProjectCard";
 import SkillCategory from "./components/SkillCategory";
 import Section from "./components/Section";
@@ -24,6 +24,7 @@ function App() {
       image:
         "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=2000",
       github: "https://github.com/manikantag2k3/multi-trait_PS",
+       // Add your deployed link
     },
     {
       title: "Real-time Chat Application",
@@ -33,6 +34,7 @@ function App() {
       image:
         "https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&q=80&w=2000",
       github: "https://github.com/manikantag2k3/Realtime-chat-app",
+      deployedLink: "https://miniproject-017.netlify.app", // Add your deployed link
     },
     {
       title: "Hotel Booking Application",
@@ -40,8 +42,9 @@ function App() {
         "A full-featured booking application using the MERN stack with MongoDB, Express, React, and Node. It includes user authentication, Stripe payment processing, Cloudinary for image uploads, and an admin panel for managing bookings.",
       techStack: ["MongoDB", "Express", "React", "Node.js", "Stripe"],
       image:
-        "https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&q=80&w=2000",
+        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&q=80&w=2000",
       github: "https://github.com/manikantagandla2/hotel-booking",
+       // Add your deployed link
     },
   ];
 

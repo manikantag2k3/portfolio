@@ -1,5 +1,5 @@
 import React from "react";
-import { Github, ArrowUpRight } from "lucide-react";
+import { Github, ArrowUpRight, ExternalLink } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -7,6 +7,7 @@ interface ProjectCardProps {
   techStack: string[];
   image: string;
   github: string;
+  deployedLink?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -15,6 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   techStack,
   image,
   github,
+  deployedLink,
 }) => {
   return (
     <div className="group bg-white/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.02] border border-white/20">
@@ -51,6 +53,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           View Project
           <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover/link:opacity-100 transition-opacity" />
         </a>
+        {deployedLink && (
+          <a
+            href={deployedLink}
+            className="group/link inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors mt-2"
+          >
+            <ExternalLink className="w-5 h-5 mr-2 group-hover/link:rotate-12 transition-transform" />
+            View Deployed App
+            <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+          </a>
+        )}
       </div>
     </div>
   );
