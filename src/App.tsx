@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Github,
   Linkedin,
@@ -8,6 +8,8 @@ import {
   User2,
   Cpu,
   ArrowRight,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { motion } from "framer-motion"; 
 import ProjectCard from "./components/ProjectCard";
@@ -15,6 +17,14 @@ import SkillCategory from "./components/SkillCategory";
 import Section from "./components/Section";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const modeClass = darkMode ? "dark" : "";
+
   const projects = [
     {
       title: "Multi-Trait Wheat Prediction",
@@ -24,7 +34,7 @@ function App() {
       image:
         "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=2000",
       github: "https://github.com/manikantag2k3/multi-trait_PS",
-       // Add your deployed link
+      // Add your deployed link
     },
     {
       title: "Real-time Chat Application",
@@ -44,26 +54,36 @@ function App() {
       image:
         "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&q=80&w=2000",
       github: "https://github.com/manikantagandla2/hotel-booking",
-       // Add your deployed link
-       deployedLink: "https://hotel-booking-017.netlify.app",
+      // Add your deployed link
+      deployedLink: "hotel-booking-frontend-x4z6.onrender.com/",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+    <div className={`${modeClass} min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800`}>
+      {/* Dark Mode Toggle Button */}
+      <div className="fixed top-4 right-4">
+        <button
+          onClick={toggleDarkMode}
+          className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-2 rounded-full shadow-md"
+        >
+          {darkMode ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
+        </button>
+      </div>
+
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white relative overflow-hidden">
+      <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white relative overflow-hidden dark:from-gray-800 dark:via-gray-700 dark:to-gray-600">
         <div className="container mx-auto px-4 py-32 relative">
           <div className="max-w-3xl">
             <motion.h1
-              className="text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100"
+              className="text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100 dark:from-gray-200 dark:to-gray-400"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
             >
               Hi, I'm Manikanta Gandla
             </motion.h1>
-            <p className="text-2xl mb-8 text-blue-100 leading-relaxed">
+            <p className="text-2xl mb-8 text-blue-100 dark:text-gray-300 leading-relaxed">
               Passionate student eager to develop impactful tech solutions and
               continually grow and innovate in the tech field.
             </p>
@@ -94,12 +114,12 @@ function App() {
         {/* About Section */}
         <Section title="About Me" icon={<User2 />}>
           <motion.div
-            className="bg-white/50 backdrop-blur-md rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border border-white/20"
+            className="bg-white/50 backdrop-blur-md rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border border-white/20 dark:bg-gray-800/50 dark:border-gray-700"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-gray-700 leading-relaxed text-lg">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
               I'm a Computer Science Engineering student with a strong
               foundation in software development, web technologies, and machine
               learning. Through personal and academic projects, I aim to build
@@ -151,15 +171,15 @@ function App() {
         {/* Education Section */}
         <Section title="Education" icon={<BookOpen />}>
           <motion.div
-            className="bg-white/50 backdrop-blur-md rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border border-white/20"
+            className="bg-white/50 backdrop-blur-md rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border border-white/20 dark:bg-gray-800/50 dark:border-gray-700"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-semibold mb-3">
+            <h3 className="text-2xl font-semibold mb-3 text-gray-800 dark:text-gray-200">
               Neil Gogte Institute of Technology
             </h3>
-            <p className="text-gray-600 mb-6 text-lg">
+            <p className="text-gray-600 dark:text-gray-400 mb-6 text-lg">
               Bachelor of Engineering in Computer Science (2021-present) | 8
               CGPA
             </p>
@@ -169,33 +189,33 @@ function App() {
         {/* Contact Section */}
         <Section title="Contact" icon={<Mail />}>
           <motion.div
-            className="bg-white/50 backdrop-blur-md rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border border-white/20"
+            className="bg-white/50 backdrop-blur-md rounded-xl p-8 shadow-lg hover:shadow-xl transition-all border border-white/20 dark:bg-gray-800/50 dark:border-gray-700"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-gray-700 mb-8 text-lg">
+            <p className="text-gray-700 dark:text-gray-300 mb-8 text-lg">
               I'm always open to discussing new projects, opportunities, or just
               having a chat about technology.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <a
                 href="mailto:manikantagandla2@gmail.com"
-                className="group flex items-center justify-center bg-white/80 rounded-lg p-4 text-gray-700 hover:text-blue-600 hover:shadow-md transition-all transform hover:scale-105"
+                className="group flex items-center justify-center bg-white/80 dark:bg-gray-700 rounded-lg p-4 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:shadow-md transition-all transform hover:scale-105"
               >
                 <Mail className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
                 manikantagandla2@gmail.com
               </a>
               <a
                 href="https://www.linkedin.com/in/manikanta-gandla-292a43263/"
-                className="group flex items-center justify-center bg-white/80 rounded-lg p-4 text-gray-700 hover:text-blue-600 hover:shadow-md transition-all transform hover:scale-105"
+                className="group flex items-center justify-center bg-white/80 dark:bg-gray-700 rounded-lg p-4 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:shadow-md transition-all transform hover:scale-105"
               >
                 <Linkedin className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
                 LinkedIn
               </a>
               <a
                 href="https://github.com/manikantag2k3"
-                className="group flex items-center justify-center bg-white/80 rounded-lg p-4 text-gray-700 hover:text-blue-600 hover:shadow-md transition-all transform hover:scale-105"
+                className="group flex items-center justify-center bg-white/80 dark:bg-gray-700 rounded-lg p-4 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:shadow-md transition-all transform hover:scale-105"
               >
                 <Github className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
                 GitHub
