@@ -77,7 +77,7 @@ function App() {
                 <ArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
               </a>
               <a
-                href="https://www.linkedin.com/in/manikanta-gandla-292a43263/"
+                href="https://www.linkedin.com/in/manikanta-gandla"
                 className="group flex items-center bg-white/10 backdrop-blur-md text-white px-6 py-3 rounded-lg font-medium hover:bg-white/20 transition-all transform hover:scale-105 hover:shadow-lg"
               >
                 <Linkedin className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
@@ -187,7 +187,7 @@ function App() {
                 manikantagandla2@gmail.com
               </a>
               <a
-                href="https://www.linkedin.com/in/manikanta-gandla-292a43263/"
+                href="https://www.linkedin.com/in/manikanta-gandla"
                 className="group flex items-center justify-center bg-white/80 rounded-lg p-4 text-gray-700 hover:text-blue-600 hover:shadow-md transition-all transform hover:scale-105"
               >
                 <Linkedin className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
